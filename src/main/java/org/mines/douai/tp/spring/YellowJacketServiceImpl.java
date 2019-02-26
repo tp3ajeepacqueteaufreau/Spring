@@ -1,12 +1,22 @@
 package org.mines.douai.tp.spring;
 
-import java.math.BigDecimal;
+import org.springframework.context.annotation.Scope;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
+@Scope("prototype")
 public class YellowJacketServiceImpl implements YellowJacketServiceBean {
     
+    Map<String, BigDecimal> yellowJacket;
     
     @Override
     public BigDecimal getPeopleCount(String country) {
-        return null;
+        BigDecimal deci = yellowJacket.getOrDefault(country, new BigDecimal(0));
+        deci.add(new BigDecimal(1000));
+        yellowJacket.put(country, deci);
+        return deci;
     }
+    
+    
 }
