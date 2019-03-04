@@ -25,4 +25,6 @@ public class YellowJacketBeanImplementation implements YellowJacketBean {
     public String getYellowJacket() {
         return "Nb yellow jacket: " + yellowJacketServiceBean.getPeopleCount(this.countryName) + "      -     Hashcode: " + this.hashCode();
     }
+    
+    
 }

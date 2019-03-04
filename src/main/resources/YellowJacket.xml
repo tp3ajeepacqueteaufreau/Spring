@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.mines.douai.tp.spring.YellowJacketBeanImplementation" id="franceBean">
+        <property name="yellowJacketServiceBean" ref="yellowJacketService"/>
+    </bean>
+    <bean class="org.mines.douai.tp.spring.YellowJacketBeanImplementation" id="allemagneBean">
+        <property name="yellowJacketServiceBean" ref="yellowJacketService"/>
+    </bean>
+    <bean class="org.mines.douai.tp.spring.YellowJacketBeanImplementation" id="pologoneBean">
+        <property name="yellowJacketServiceBean" ref="yellowJacketService"/>
+    </bean>
+
+    <bean class="org.mines.douai.tp.spring.YellowJacketServiceImpl" id="yellowJacketService">
+    </bean>
+
+    <bean class="org.mines.douai.tp.spring.YellowJacketMain" id="jacketMain">
+        <property name="france" ref="franceBean"/>
+        <property name="allemagne" ref="allemagneBean"/>
+        <property name="pologne" ref="pologoneBean"/>
+    </bean>
+
+</beans>

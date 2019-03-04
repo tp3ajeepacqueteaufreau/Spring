@@ -13,7 +13,7 @@ public class YellowJacketServiceImpl implements YellowJacketServiceBean {
     @Override
     public BigDecimal getPeopleCount(String country) {
         BigDecimal deci = yellowJacket.getOrDefault(country, new BigDecimal(0));
-        deci.add(new BigDecimal(1000));
+        deci = deci.add(new BigDecimal(1000));
         yellowJacket.put(country, deci);
         return deci;
     }
