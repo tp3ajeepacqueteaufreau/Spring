@@ -3,6 +3,7 @@ package org.mines.douai.tp.spring;
 import org.springframework.context.annotation.Scope;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.Map;
 
 @Scope("prototype")
@@ -10,6 +11,9 @@ public class YellowJacketServiceImpl implements YellowJacketServiceBean {
     
     Map<String, BigDecimal> yellowJacket;
     
+    public YellowJacketServiceImpl() {
+        yellowJacket = new HashMap<>();
+    }
     
     @Override
     public BigDecimal getPeopleCount(String country) {

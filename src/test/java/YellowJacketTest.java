@@ -4,6 +4,9 @@ import org.mines.douai.tp.spring.YellowJacketMain;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.math.BigDecimal;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class YellowJacketTest {
@@ -26,6 +29,28 @@ public class YellowJacketTest {
     
     @Test
     public void testNumberOfYellowJacket() {
-        yellowJacketMain.printYellowJacket();
+        BigDecimal nb = yellowJacketMain.getAllemagne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getAllemagne().getCountryName());
+        assertEquals(0, nb.compareTo(new BigDecimal(1000)));
+    }
+    
+    @Test
+    public void testNumberYellowJacketAfter2Call() {
+        BigDecimal nb = yellowJacketMain.getFrance().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getFrance().getCountryName());
+        assertEquals(0, nb.compareTo(new BigDecimal(1000)));
+        nb = yellowJacketMain.getFrance().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getFrance().getCountryName());
+        assertEquals(0, nb.compareTo(new BigDecimal(2000)));
+    }
+    
+    @Test
+    public void testNumberYellowJacketAfter5Call() {
+        yellowJacketMain.getPologne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getPologne().getCountryName());
+        yellowJacketMain.getPologne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getPologne().getCountryName());
+        yellowJacketMain.getPologne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getPologne().getCountryName());
+        yellowJacketMain.getPologne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getPologne().getCountryName());
+        yellowJacketMain.getPologne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getPologne().getCountryName());
+        BigDecimal nb = yellowJacketMain.getPologne().getYellowJacketServiceBean().getPeopleCount(yellowJacketMain.getPologne().getCountryName());
+        
+        assertEquals(0, nb.compareTo(new BigDecimal(6000)));
+        
     }
 }
