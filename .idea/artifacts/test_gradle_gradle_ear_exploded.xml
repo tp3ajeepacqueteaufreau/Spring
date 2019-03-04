@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ear" name="test.gradle.gradle:ear exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/test_gradle_gradle_ear_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="test.gradle.gradle/javaeeApplication/javaEEApplication" />
-    </root>
-  </artifact>
-</component>

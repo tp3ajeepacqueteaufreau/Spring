@@ -53,4 +53,9 @@ public class YellowJacketTest {
         assertEquals(0, nb.compareTo(new BigDecimal(6000)));
         
     }
+    
+    @Test
+    public void printAllInformations() {
+        yellowJacketMain.printYellowJacket();
+    }
 }
