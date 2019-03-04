@@ -1,8 +1,5 @@
 package org.mines.douai.tp.spring;
 
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
 public interface YellowJacketBean {
     String getCountryName();
     

@@ -2,6 +2,8 @@ package org.mines.douai.tp.spring;
 
 import org.springframework.context.annotation.Scope;
 
+import javax.annotation.PostConstruct;
+
 @Scope("application")
 public class YellowJacketMain {
     
@@ -10,7 +12,8 @@ public class YellowJacketMain {
     YellowJacketBean pologne;
     
     
-    private void printYellowJacket() {
+    @PostConstruct
+    public void printYellowJacket() {
         System.out.println(france.getYellowJacket());
         System.out.println(allemagne.getYellowJacket());
         System.out.println(pologne.getYellowJacket());

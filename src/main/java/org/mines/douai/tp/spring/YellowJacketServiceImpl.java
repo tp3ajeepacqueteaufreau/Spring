@@ -10,6 +10,7 @@ public class YellowJacketServiceImpl implements YellowJacketServiceBean {
     
     Map<String, BigDecimal> yellowJacket;
     
+    
     @Override
     public BigDecimal getPeopleCount(String country) {
         BigDecimal deci = yellowJacket.getOrDefault(country, new BigDecimal(0));
